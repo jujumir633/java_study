@@ -1,4 +1,5 @@
 package com.kosmo.ex;
+//git 저장소
 
 public class S01ClassAndPackage {
     /*
