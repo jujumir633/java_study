@@ -49,6 +49,9 @@ public class L12While {
         String line=scanner.nextLine(); //입력을 기다리는 무한 반복문
         System.out.println("값은"+line+"입니다");
 
+        Calculator v= new Calculator("잠자리");
+        System.out.println(v.name);
+
 
 
 
