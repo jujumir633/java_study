@@ -160,6 +160,10 @@ System.out.println(Arrays.toString(arr));
 * `new`는 힙에 **독립적인 객체 인스턴스 생성**
 * 메서드 영역은 **공통 정보**, 힙 메모리는 **개별 데이터**
 
+class A{
+     int a;
+     static int b; // new A() 관련이 없는 독립적인 존재 로 호출 시 클래스명+필드명(ex ++A.b)
+
 ---
 
 ## 📘 자바 메모리 구조 관련 문제 (스택 제외)

@@ -108,39 +108,43 @@ void call(int a) { } // 오버로딩
 ⸻
 
 ✅ 1~10번: 개념 이해 (객관식/단답)
-	1.	자바에서 클래스를 상속할 때 사용하는 키워드는 무엇인가요?
-① import ② package ③ implements ④ ?
+	1.	자바에서 클래스를 상속할 때 사용하는 키워드는 무엇인가요? 4번
+① import ② package ③ implements ④ extends
 
 ⸻
 
-	2.	부모 클래스의 생성자를 호출할 때 사용하는 키워드는 무엇인가요?
-① this ② super ③ extends ④ override
+	2.	부모 클래스의 생성자를 호출할 때 사용하는 키워드는 무엇인가요? 2번
+① this ② super ③ extends ④ override
 
 ⸻
 
-	3.	다음 중 자바의 최상위 클래스는 무엇인가요?
-① Main ② SuperClass ③ Base ④ ?
+	3.	다음 중 자바의 최상위 클래스는 무엇인가요? 4번
+① Main ② SuperClass ③ Base ④ Object
 
 ⸻
 
 	4.	super()는 자식 클래스의 생성자에서 반드시 어디에 위치해야 하나요?
+   첫번째 줄
 
 ⸻
 
 	5.	부모 클래스에 기본 생성자가 없는 경우, 자식 클래스는 어떤 동작을 해야 하나요?
+	 extends
 
 ⸻
 
-	6.	메서드 오버라이딩을 명확히 하기 위해 사용하는 어노테이션은 무엇인가요?
-① @Super ② @Overload ③ @Override ④ @Virtual
+	6.	메서드 오버라이딩을 명확히 하기 위해 사용하는 어노테이션은 무엇인가요? 3번
+① @Super ② @Overload ③ @Override ④ @Virtual
 
 ⸻
 
 	7.	자바에서 메서드 오버로딩이란 무엇인가요?
+	부모 클래스에 같은 시그니처 메서드를 자식클래스에서 재정의
+	d
 
 ⸻
 
-	8.	Object.toString()의 기본 반환 형태는 어떤 구조인가요?
+	8.	Object.toString()의 기본 반환 형태는 어떤 구조인가요? 2번
 ① 객체의 필드 내용
 ② 클래스 이름과 해시코드
 ③ 클래스의 부모 이름
@@ -149,11 +153,14 @@ void call(int a) { } // 오버로딩
 ⸻
 
 	9.	equals() 메서드는 어떤 기능을 하나요?
+	두객체의 필드가 같은지 확인하기 위해 재정의 해야합니다
+	/컴퓨터 : 두 객체가 다른 주소면 다른 객체
+	/사람 : 두 객체의 필드가 같은 객체 아닌가? 를 구현하는 메서드
 
 ⸻
 
 	10.	부모와 자식 클래스가 동일한 이름의 필드를 가질 경우, this.name과 super.name은 무엇을 의미하나요?
-
+      this.name 해당 클래스 필드명 , super.name 부모 클래스 필드명
 ⸻
 
 ✅ 11~15번: 코드 빈칸 채우기
@@ -163,7 +170,7 @@ class Parent {
     String name = "부모";
 }
 
-class Child _______ Parent {
+class Child extends Parent {
     String name = "자식";
 }
 
@@ -178,14 +185,14 @@ class Parent {
 
 class Child extends Parent {
     Child(int a) {
-        ______(a);
+        super(a);
     }
 }
 
 
 ⸻
 
-	13.	다음 클래스는 Object의 어떤 메서드를 오버라이드한 걸까요?
+	13.	다음 클래스는 Object의 어떤 메서드를 오버라이드한 걸까요? toString()
 
 @Override
 public String toString() {
@@ -197,7 +204,7 @@ public String toString() {
 
 	14.	부모 클래스의 sayHi() 메서드를 자식 클래스에서 그대로 호출하려면?
 
-super.__________();
+super.sayhi();
 
 
 ⸻
@@ -209,10 +216,12 @@ class Parent {
 }
 
 class Child extends Parent {
-    Child() {
+    Child(int a) {
+    super.a
         // 오류 발생
     }
 }
+부모 클래스의 생성자를 재정의
 
 
 ⸻
@@ -230,19 +239,20 @@ public class Test {
         System.out.println(p);
     }
 }
-
+"홍길동"의 주소 16진수
 
 ⸻
 
 	17.	오버라이딩(Overriding)과 오버로딩(Overloading)의 차이를 간단히 설명해보세요.
-
+   오버라이딩 : 부모자식 클래스에서 메소드를 자식이 재정의 하는것
+   오버로드(여러개) : 1개의 메서드 이름으로 매개변수가 다른 메서드를 생성가능
 ⸻
 
 	18.	Object 클래스의 getClass() 메서드는 어떤 정보를 반환하나요?
-
+           getClass() → 클래스 이름을 문자열로 반환
 ⸻
 
-	19.	다음 코드의 출력 결과를 예측하세요:
+	19.	다음 코드의 출력 결과를 예측하세요: 자식 부모
 
 class Parent {
     String name = "부모";
@@ -267,7 +277,7 @@ public class Main {
 ⸻
 
 	20.	자바에서 모든 클래스가 Object를 상속받도록 만든 이유는 무엇인가요?
-
+    Object 의 유용한 메소드 제공
 ⸻
 
 📘 상속 · super · Object 중급 문제 10제
@@ -297,6 +307,8 @@ public class Main {
         System.out.println("name: " + c.name);
     }
 }
+Child: 자식
+name : 자식
 
 
 ⸻
@@ -311,7 +323,7 @@ class Parent {
 
 class Child extends Parent {
     void show() {
-        ___________________________;
+        super.show()______________;
     }
 }
 
@@ -319,6 +331,7 @@ class Child extends Parent {
 ⸻
 
 23. 다음 코드에서 오류가 발생하는 이유를 서술하세요.
+ 부모 생성자 재정의 필요
 
 class Parent {
     Parent(int a) {}
@@ -333,7 +346,7 @@ class Child extends Parent {
 
 ⸻
 
-24. 다음 중 자바의 클래스 구조로 맞는 설명을 모두 고르세요.
+24. 다음 중 자바의 클래스 구조로 맞는 설명을 모두 고르세요. 1번,3번
 
 ① 모든 클래스는 Object 클래스를 상속한다.
 ② 자식 클래스는 부모의 private 멤버를 직접 접근할 수 있다.
@@ -343,6 +356,7 @@ class Child extends Parent {
 ⸻
 
 25. Object 클래스의 equals() 메서드는 어떤 기준으로 두 객체를 비교하나요? 이를 바꾸고 싶다면 어떤 작업이 필요할까요?
+ 객체 저장 주소로 비교, 오버라이드 해야됨(재정의)
 
 ⸻
 
@@ -351,7 +365,8 @@ class Child extends Parent {
 class Book {
     String title = "자바";
 
-    // toString() 오버라이딩 없음
+    public String toString(){
+     return "타이틀은 :"+title
 }
 
 public class Test {
@@ -366,9 +381,9 @@ public class Test {
 
 27. @Override 어노테이션을 사용하는 이유를 설명하고, 실수로 오타가 날 경우 어떤 장점이 있는지 예시와 함께 설명하세요.
 
-⸻
+⸻부모클래서의 메서드를 자식클래스에서 재정의
 
-28. 다음 클래스에서 super.name을 사용하면 어떤 값을 출력할까요?
+28. 다음 클래스에서 super.name을 사용하면 어떤 값을 출력할까요? 부모
 
 class A {
     String name = "부모";
@@ -386,6 +401,8 @@ class B extends A {
 ⸻
 
 29. 다음은 상속 관계에서 생성자 호출 순서를 묻는 코드입니다. 어떤 순서로 출력될까요?
+"A 생성자"
+"B 생성자"
 
 class A {
     A() {
@@ -415,8 +432,8 @@ class A {
 }
 
 class B extends A {
-    B() {
-        this(); // 오류 발생
+    B(int x) {
+        this(); // 무한 재귀오류 발생
     }
 
     B(int x) {
@@ -435,7 +452,7 @@ class B extends A {
 
 🧪 실습형 자바 문제 (상속 · super · Object)
 
-⸻
+
 
 🔧 실습 1. 부모 필드 상속 & 재정의
 
@@ -447,13 +464,14 @@ class B extends A {
 
 목표: this와 super의 차이, 필드 숨김 이해하기
 
-⸻
+
 
 🔧 실습 2. 생성자에서 super() 사용하기
 
 요구사항:
 	•	Member 클래스를 만들고 Member(String name) 생성자에서 이름을 출력하세요.
-	•	Student 클래스를 만들어 Member를 상속받고, Student(String name, String school) 생성자에서 super(name)을 호출한 뒤 학교명을 출력하세요.
+	•	Student 클래스를 만들어 Member를 상속받고, Student(String name, String school) 생성자에서 super(name)을 호
+	    출한 뒤 학교명을 출력하세요.
 	•	main()에서 Student 객체를 생성해보세요.
 
 예상 출력:
