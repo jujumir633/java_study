@@ -32,7 +32,7 @@ public class L29InnerClass {
 
         Out.A a=new Out.A(); //호출 가능
 
-
     }
 
 }
+
