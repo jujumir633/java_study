@@ -13,7 +13,7 @@ public class S02TryCatch {
 2. 예외의 종류
 	•	Checked Exception (확인된 예외)
 	•	컴파일러가 확인하고 처리하도록 강제
-	•	예: IOException, SQLException
+	•	예외 위임으로 컴파일러가 예외를 알도록 하고 처리하게 함 (예:throws IOException, SQLException)
 	•	try-catch나 throws로 반드시 처리해야 함
 	•	Unchecked Exception (확인되지 않은 예외)
 	•	런타임 시점에 발생, 컴파일러가 강제하지 않음
@@ -95,8 +95,8 @@ public static void readFile() throws IOException {
 7. throw와 throws 차이
 
 항목	설명
-throw	예외를 발생시킴 (실행 시)
-throws	예외를 위임함 (선언 시)
+throw	객체에서 예외를 발생시킴 (실행 시)
+throws	메소드에서 선언 예외를 위임함 (선언 시)
 
 throw new IllegalArgumentException("잘못된 값");
 

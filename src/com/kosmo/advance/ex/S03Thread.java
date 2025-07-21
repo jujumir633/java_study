@@ -13,7 +13,7 @@ public class S03Thread {
 ⸻
 
 - 2. 스레드를 사용하는 이유
-	•	CPU를 효율적으로 사용
+	•	효율적으로 일을하기 위해서(동시에 여러작업)
 	•	동시에 여러 작업을 처리
 	•	사용자 응답성을 향상 (UI 멈춤 방지)
 	•	병렬 처리 (성능 개선)
@@ -38,16 +38,27 @@ class MyRunnable implements Runnable {
     }
 }
 
-실행 방법 (공통)
+(3) 실행 방법 (공통)
 
-Thread t = new MyThread();       // 또는 new Thread(new MyRunnable());
+Thread t = new Thread(new MyRunnable());
 t.start();  // run()이 아닌 start() 호출해야 새 스레드에서 실행됨
 
+(4) 익명클래스 실행법
+Thread t = new Thread(new Runnable(){
+   public void run(){
+   실행코드
+   }
+});
+t.start();
 
+(4) 람다식 실행법
+new Thread(()->{
+  //실행할 코드
+}).start();
 ⸻
 
 - 4. run() vs start() 차이
-	•	run() → 일반 메서드처럼 실행 (스레드 아님)
+	•	run() → start가 실행할 콜백함수로 개발자가 재정의 해야함
 	•	start() → 새로운 스레드를 생성해서 run()을 내부적으로 실행
 
 ⸻
