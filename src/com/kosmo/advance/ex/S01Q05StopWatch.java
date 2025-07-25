@@ -16,19 +16,16 @@ public class S01Q05StopWatch extends JFrame {
     private JButton resetBtn; //정지버튼
     private JPanel topPanel; //시작, 종료 버튼 패널
     private JLabel centerLabel;
-    private int time=1000; //10초*100
-
-
+    private int time=0; //10초*100
     private Timer timer;
+
+
     public S01Q05StopWatch(){
         timer=new Timer(10,(e)->{
-            if(time==0){
-                timer.stop();
-                return;
-            }
-            --time;
-            centerLabel.setText(String.format("%.2f", time/100.0));
+            ++time;
+            centerLabel.setText(String.format("%.2f",time/100.0));
         });//1/1000 초마다 time 을 --하는 타이머
+
         startBtn=new JButton("시작");
         startBtn.addActionListener((e)->{
             timer.start();
@@ -40,7 +37,7 @@ public class S01Q05StopWatch extends JFrame {
         resetBtn=new JButton("리셋");
         resetBtn.addActionListener((e)->{
             timer.stop();
-            time=1000;
+            time=0;
             centerLabel.setText(String.format("%.2f", time/100.0));
         });
         topPanel=new JPanel();
@@ -48,14 +45,15 @@ public class S01Q05StopWatch extends JFrame {
         topPanel.add(startBtn);
         topPanel.add(stopBtn);
         topPanel.add(resetBtn);
+        centerLabel=new JLabel(String.format("%.2f", time/100.0),SwingConstants.CENTER);
+        centerLabel.setFont(new Font("맑은 고딕",Font.BOLD,50));
+
+
+
+
         this.add(topPanel,BorderLayout.NORTH);
-        centerLabel=new JLabel(String.format("%.2f", time/100.0));
         this.add(centerLabel);
-
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-
-
         this.setBounds(0,0,500,400);
         this.setVisible(true);
     }
