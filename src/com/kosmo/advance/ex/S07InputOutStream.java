@@ -2,13 +2,9 @@ package com.kosmo.advance.ex;
 
 public class S07InputOutStream {
     /*
-⸻
-
-물론입니다. 기존 내용을 바탕으로 조금 더 깊이 있으면서도 쉽게 이해할 수 있도록 보강한 설명을 아래에 정리해드릴게요.
-
-⸻
 
 - 1. 입출력 스트림 개요
+    * input , output
 
 	•Stream(스트림)이란?
 
@@ -57,7 +53,7 @@ public class S07InputOutStream {
 ⸻
 
 - 스트림의 핵심 특징 요약
-	•	순차적 처리: 데이터를 한 번에 하나씩 읽고 씀 (대용량 처리에 적합)
+	•	순차적 처리(Itreator 와 같다): 데이터를 한 번에 하나씩 읽고 씀 (대용량 처리에 적합)
 	•	단방향 흐름: 입력과 출력은 별도의 스트림
 	•	다양한 출처와 목적지 지원: 파일, 네트워크, 메모리, 콘솔 등
 	•	보조 스트림 가능: Buffered, Data, Object 등 성능 향상 및 기능 확장 가능
@@ -114,7 +110,8 @@ public class S07InputOutStream {
 4. 기본 예제: 파일에 문자열 저장 및 읽기
 
 4-1. FileWriter  (문자 스트림)
-    try (FileWriter writer = new FileWriter("hello.txt")) {
+    try () {
+    FileWriter writer = new FileWriter("hello.txt")
         writer.write("안녕하세요\nJava 입출력 수업입니다.");
     } catch (IOException e) {
         e.printStackTrace();
