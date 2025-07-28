@@ -28,9 +28,9 @@ public class A17File {
             fileWriter.write("자바 고급 수업 입니다!");
 
         } catch (IOException e) {
-            System.out.println("출력오류뜸");
+            System.out.println("파일 출력중 오류 발생");
             e.printStackTrace();
-        }
+        } //여기서 자동으로 close(); 해줌
 
 
         try (
