@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class A23ChatClient {
     public static void main(String[] args) {
-        try(Socket socket=new Socket("127.0.0.1",8888)){
+        try(Socket socket=new Socket("192.168.0.7",8888)){
             //콘솔에서 입력한 문자열 => 서버로 전송하는 무한반복문
             new Thread(()->{
                 Scanner scan=new Scanner(System.in); //채팅창에 입력한 메세지 받을 준비

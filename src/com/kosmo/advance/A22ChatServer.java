@@ -15,9 +15,9 @@ public class A22ChatServer {
         try(ServerSocket serverSocket=new ServerSocket(8888);){
             while (true){
                 Socket client =serverSocket.accept();
-                clients.add(client);
                 String ip=client.getInetAddress().toString();
                 System.out.println(ip+"님 접속");
+                clients.add(client);
                 //클라이너트 접속이 올때까지 기다림, 막약 오면 Socket을 반환
                 new Thread(()->{ //접속한 클라이언트의 메세지를 받는 일꾼
                     try(BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(client.getInputStream()));) {
