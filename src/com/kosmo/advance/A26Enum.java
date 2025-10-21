@@ -55,7 +55,7 @@ public class A26Enum {
         // 정수로 상태를 표현하면 조건의 분기 타입을 어떤 것이든 사용가능하게 됨!
         // 고유 상태를 갖는 상수 타입을 만들자! -> enum
 
-        DirectEnum direct=DirectEnum.EAST;
+        DirectEnum direct=DirectEnum.WEST;
         switch (direct){
             case EAST -> System.out.println("위로");
             case WEST -> System.out.println("아래");
